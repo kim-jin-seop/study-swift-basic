@@ -55,3 +55,83 @@ var second = "c"
 second += first // ca b
 ```
 +연산자 활용해 합치기 가능, += 연산도 가능 연산 시 뒤에 붙음
+
+# Array
+## Mutable 배열 생성하는 방법
+```
+var emptyArray = Array<String>()
+var emptyArray2 = [String]()
+```
+
+
+## 배열에 추가하는 방법1(append)
+```
+emptyArray2.append("Anna")
+emptyArray2.append("Alex")
+```
+배열의 뒤쪽으로 계속해서 추가됨
+
+## 배열에 추가하는 방법2(+=)
+```
+var array3 = ["A","B","C","D"]
+array3 += ["E"]
+array3 += ["F","G"]
+```
+
+## 배열에 추가하는 방법3(동시에 변경)
+```
+array3[3...5] = ["a","b","c"]
+```
+index 3,4,5를 각각으로 변경  
+
+## 배열에 접근하는 방법
+```
+array3[3]
+```
+인덱스를 활용하여 접근(0부터 인덱스 시작)
+
+## 배열의 특정 부분을 수정하는 법
+```
+array3[3] = "Hello"
+```
+
+## immutable 배열 선언
+```
+let array4 = ["a","b","c"]
+```
+let을 활용하여 배열을 만들면 된다.  
+변경이 이루어지지 않으며, mutable한 배열보다 속도가 빠르기 때문에 데이터의 변경이 없다면, 위 배열을 사용하는 것이 효율적이다.
+
+
+# Dictionary
+## Mutable Dictionary 생성
+```
+var dictionary = Dictionary<String,Int>()
+var dictionary2 = [String:Int]()
+```
+
+## Dictionary에 추가
+```
+dictionary2["and"] = 6
+dictionary2["snake"] = 0
+```
+[]괄호 안에 key, 그리고 assignment뒤에  value  
+
+
+## Dictionary 초기화
+```
+dictionary3 = ["and":6,"snake":0,"cat":4]
+```
+:을 활용하여 key와 value 구분하여 생성
+
+## value 변경
+```
+dictionary3["cat"] = 5
+```
+기존에 있는 key값에 새로운 값을 assign
+
+## immutable Dictionary 생성
+```
+let dictionary4 = ["ant":3,"snake":0,"cat":4]
+```
+배열과 동일하게 Dictionary도 immutable한 Dictionary가 속도가 빠름
