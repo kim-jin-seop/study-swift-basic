@@ -230,3 +230,51 @@ switch문은 기존에 내가 알고 있던 switch에 비해 상당히 강력함
 1. ,를 활용하여 여러가지 조건에서 확인할 수 있음.  
 2. where절을 활용하여 추가적인 조건을 줄 수 있음  
 3. break문이 필요 없음  
+
+# 함수
+
+## void형 함수
+
+```
+func hello(){
+  print("Hello")
+}
+```
+반환하는 타입이 없음
+
+## Return
+```
+func hello2() -> String{
+  return "Say Hello"
+}
+```
+반환하는 타입 : String
+
+## Parameter
+```
+func add(a:Int, b:Int) -> Int{
+  return a + b
+}
+
+add(a:3 , b:4)
+```
+parameter와 argument label이 동일  
+
+## Default parameter
+```
+func add2(a:Int = 3, b:Int) -> Int{
+  return a + b
+}
+```
+a 파라미터에 기본값 3, 만약 argument a에 대입이 없으면 a = 3
+
+## Argument Label
+```
+func add3(a first:Int, _ second:Int) -> Int{
+  return first + second
+}
+add3(a:4,5)
+```
+add3에서 a는 argument label  
+first는 parameter  
+argument label에 '_'를 사용하면 함수 호출 시 그냥 값만 적으면 됨.  
