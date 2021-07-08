@@ -278,3 +278,78 @@ add3(a:4,5)
 add3에서 a는 argument label  
 first는 parameter  
 argument label에 '_'를 사용하면 함수 호출 시 그냥 값만 적으면 됨.  
+
+# 구조체
+
+## 구조체가 필요한 이유
+```
+var name = ["Park","Choi","Kim","Lee"]
+var age = [3,4,5,6]
+var height = [40,50,60,70]
+```
+한 인물의 데이터를 위처럼 배열을 활용해 넣으면 가독성이 떨어지고, 배열 각각을 일일히 써야하기에 어려움
+
+## 구조체 선언
+```
+struct Student{
+    var name: String
+    var age: Int
+    var height: Int
+}
+```
+구조체를 선언하는 방법
+
+
+## 구조체 생성
+```
+var student1 = Student(name: "Park", age: 3, height: 40)
+var student2 = Student(name: "Choi", age: 4, height: 50)
+
+```
+구조체를 생성하는 방법은 위 처럼 각각의 변수에 데이터를 넣어주면 됨
+
+## 구조체 사용
+```
+print(student1.name, student1.age, student1.height)
+```
+구조체를 사용하기 위해서 '.'을 활용함
+
+# Optional
+
+## Optional 변수
+swift에서 지금까지 배운 변수는 항상 초기화를 시켜주었음.   
+nil값이 있으면 연산중에 runtime에 프로그램이 종료되기 때문에 문제가 됨.  
+따라서 Optional를 활용하여 nil값이 있을 경우 문제를 해결 할 수 있음.
+
+## Optional 선언
+```
+var varName:Int?
+```
+?를 타입 뒤에 붙여서 선언  
+초기화를 시켜주지 않아도 됨  
+
+## 캐스팅
+```
+let possibleNumber = "f"
+let convertedNumber = Int(possibleNumber)
+```
+캐스팅을 시켜주면 optional 변수로 캐스팅이 됨  
+그 이유는, 위 예처럼 string을 integer로 캐스팅 할 경우 nil값으로 캐스팅해 주어야 하기 때문이다.  
+
+## optional 변수 사용 1
+```
+if convertedNumber != nil{
+    print(convertedNumber!)
+}
+```
+변수 뒤에 !를 붙이면 강제로 optional을 벗기기 가능  
+이때 주의점은 해당 변수가 nil이 아닐 때만 사용해야함.  
+
+## optional 변수 사용 2
+```
+if let actualNumber = Int(possibleNumber) {
+    print(actualNumber)
+}
+```
+위 처럼 if문을 사용 시 possibleNumber가 nil이 아니면 if문 실행  
+nil일 경우 else문을 실행함
